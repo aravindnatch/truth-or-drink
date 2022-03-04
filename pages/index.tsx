@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
@@ -26,38 +27,48 @@ const Home: NextPage = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="text-white font-bold text-xl rounded-xl p-4 shadow-xl w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#00C5FF] to-[#009BFF]">
-              Normal
-            </div>
-            <div className="text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FFC300] to-[#FF8900]">
-              Party
-            </div>
+            <Link href='/game?mode=normal'>
+              <div className="cursor-pointer text-white font-bold text-xl rounded-xl p-4 shadow-xl w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#00C5FF] to-[#009BFF]">
+                Normal
+              </div>
+            </Link>
+            <Link href='/game?mode=party'>
+              <div className="cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FFC300] to-[#FF8900]">
+                Party
+              </div>
+            </Link>
           </div>
 
           <br/>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FF006D] to-[#FC0023]">
-              Dirty
-            </div>
-            <div className="text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]">
-              Intimate
-            </div>
+            <Link href='/game?mode=dirty'>
+              <div className="cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FF006D] to-[#FC0023]">
+                Dirty
+              </div>
+            </Link>
+            <Link href='/game?mode=intimate'>
+              <div className="cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]">
+                Intimate
+              </div>
+            </Link>
           </div>
 
           <br/> 
 
-          <div className="text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-black">
-            M I X &nbsp; M O D E S
-          </div>
+          <Link href='/game?mode=mix'>
+            <div className="cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-black">
+              Mix Modes
+            </div>
+          </Link>
 
         </div>
       </div>
-      <footer className="bg-gray-100 text-center lg:text-left">
+      {/* <footer className="bg-gray-100 text-center lg:text-left">
         <div className="text-center text-gray-700 p-4">
           © 2022 <a className="text-gray-800" href="https://aravindnatch.me/">Aravind Natchiappan</a>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }
