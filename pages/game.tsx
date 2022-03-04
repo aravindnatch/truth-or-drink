@@ -42,19 +42,19 @@ const Game: NextPage = () => {
       </Head>
       <div className="flex flex-col h-screen">
         
-      <Link href='/'>
-        <div>
-          <div className="text-4xl text-header font-semibold mx-auto text-center align-middle pt-4 pb-2">
-            TRUTH <span className="text-xl align-middle">O R</span> DRINK
+        <Link href='/'>
+          <div>
+            <div className="text-4xl text-header font-semibold mx-auto text-center align-middle pt-4 pb-2">
+              TRUTH <span className="text-xl align-middle">O R</span> DRINK
+            </div>
+          
+            <div className={[gradient, "rounded-lg text-center text-white font-bold max-w-fit px-4 m-auto"].join(" ")}>
+                {mode.toUpperCase().split('').join(' ')}
+            </div>
           </div>
-        
-          <div className={[gradient, "rounded-lg text-center text-white font-bold max-w-fit px-4 m-auto"].join(" ")}>
-              {mode.toUpperCase().split('').join(' ')}
-          </div>
-        </div>
-      </Link>
+        </Link>
       
-        <div className="p-4 flex flex-grow ">
+        <div className="p-4 flex flex-grow mx-auto">
           <div className="flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4">
             {question}
           </div>
