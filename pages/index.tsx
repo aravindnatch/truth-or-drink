@@ -47,9 +47,9 @@ const Home: NextPage = () => {
                 Dirty
               </div>
             </Link>
-            <Link href='/game?mode=intimate'>
+            <Link href='/game?mode=dares'>
               <div className="cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]">
-                Intimate
+                Dares
               </div>
             </Link>
           </div>
@@ -64,11 +64,6 @@ const Home: NextPage = () => {
 
         </div>
       </div>
-      {/* <footer className="bg-gray-100 text-center lg:text-left">
-        <div className="text-center text-gray-700 p-4">
-          © 2022 <a className="text-gray-800" href="https://aravindnatch.me/">Aravind Natchiappan</a>
-        </div>
-      </footer> */}
     </div>
   )
 }
