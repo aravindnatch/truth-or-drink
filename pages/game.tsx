@@ -33,6 +33,9 @@ const Game: NextPage = () => {
   } else if (mode == 'mix') {
     gradient = 'bg-black';
     bank = 4;
+  } else {
+    gradient = 'bg-gradient-to-r from-[#00C5FF] to-[#009BFF]';
+    mode = 'normal';
   }
 
   useEffect(() => {
