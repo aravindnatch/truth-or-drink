@@ -96,7 +96,7 @@ const Game: NextPage = () => {
 
         <div className="p-4 flex flex-grow mx-auto">
           <div 
-            className="select-none flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4"
+            className="select-none flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
             onClick={() => {
               if (index + 1 >= questions[bank].length) {
                 setQuestion(questions[bank][0]);
