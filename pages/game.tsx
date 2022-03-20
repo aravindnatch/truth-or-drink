@@ -16,8 +16,8 @@ const Game: NextPage = () => {
   const [question, setQuestion] = useState("")
 
   var mode = 'normal';
+  var prearr: any = [];
   var gradient = ''
-  var bank = 0
 
   useEffect(() => {
     if(!router.isReady) return;
@@ -30,47 +30,39 @@ const Game: NextPage = () => {
   switch (mode) {
     case "party":
       gradient = 'bg-gradient-to-r from-[#FFC300] to-[#FF8900]';
-      bank = 1;
+      prearr = party;
       break;
     case "dirty":
       gradient = 'bg-gradient-to-r from-[#FF006D] to-[#FC0023]';
-      bank = 2;
+      prearr = dirty;
       break;
     case "dares": 
       gradient = 'bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]';
-      bank = 3;
+      prearr = dares;
       break;
     case "mix":
       gradient = 'bg-black';
-      bank = 4;
+      prearr = [...normal, ...party, ...dirty, ...dares];
       break;
 
     default: 
       gradient = 'bg-gradient-to-r from-[#00C5FF] to-[#009BFF]';
+      prearr = normal;
   }
 
   useEffect(() => {
-    const questions: any = [];
-    const mix = [...normal, ...party, ...dirty, ...dares];
-
-    questions.push(normal);
-    questions.push(party);
-    questions.push(dirty);
-    questions.push(dares);
-    questions.push(mix);
-  
-    let currentIndex = questions[bank].length,  randomIndex;
+    let currentIndex = prearr.length,  randomIndex;
 
     while (currentIndex != 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
   
-      [questions[bank][currentIndex], questions[bank][randomIndex]] = [
-        questions[bank][randomIndex], questions[bank][currentIndex]];
+      [prearr[currentIndex], prearr[randomIndex]] = [
+        prearr[randomIndex], prearr[currentIndex]];
     }
 
-    setQuestions(questions[bank]);
-    setQuestion(questions[bank][0]);
+    setQuestions(prearr);
+    setQuestion(prearr[0]);
   }, []);
 
   function getYear() {
