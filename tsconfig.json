@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/game.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/game.tsx","public/**/*.json"],
   "exclude": ["node_modules"]
 }
