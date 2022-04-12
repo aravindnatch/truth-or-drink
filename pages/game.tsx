@@ -90,7 +90,7 @@ const Game: NextPage = () => {
         </Link>
       
 
-        <div className="p-4 flex flex-grow mx-auto">
+        <div className="p-4 flex flex-grow mx-auto mb-10">
           <div 
             className="select-none flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
             onClick={() => {
@@ -107,23 +107,9 @@ const Game: NextPage = () => {
           </div>
         </div>
 
-        <div 
-          onClick={() => {
-            if (index + 1 >= questions.length) {
-              setQuestion(questions[0]);
-              setIndex(0)
-            } else {
-              setQuestion(questions[index+1]); 
-              setIndex(index + 1)
-            }
-          }}
-          className="select-none flex items-center justify-center text-3xl font-bold text-center rounded-xl mx-20 mb-8 py-4 cursor-pointer"
-        >
-          Next Question
-        </div>
         <footer className="bg-gray-100 text-center lg:text-left">
         <div className="text-center text-gray-700 p-4">
-          © {getYear()} <a className="text-blue-600 font-semibold" href="https://aravindnatch.me/">Aravind Natchiappan</a>
+          © {getYear()} <a className="text-blue-600 font-semibold" href="https://aru.wtf/">Aravind Natchiappan</a>
         </div>
       </footer>
       </div>
