@@ -108,9 +108,9 @@ const Game: NextPage = () => {
           </div>
         </div>
 
-        <footer className="bg-gray-100 text-center lg:text-left">
-        <div className="text-center text-gray-700 p-4">
-          © {getYear()} <a className="text-blue-600 font-semibold" href="https://aru.wtf/">Aravind Natchiappan</a>
+        <footer className="text-center lg:text-left">
+        <div className="text-center text-gray-700 p-4 text-opacity-60">
+          © {getYear()} <a className="font-semibold text-opacity-60" href="https://aru.wtf/">Aravind Natchiappan</a>
         </div>
       </footer>
       </div>
