@@ -74,6 +74,7 @@ const Game: NextPage = () => {
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
+        <script defer data-domain="tod.aru.wtf" src="https://analytics.aru.wtf/js/script.js"></script>
       </Head>
       <div className="flex flex-col h-screen">
         
