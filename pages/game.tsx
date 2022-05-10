@@ -91,7 +91,7 @@ const Game: NextPage = () => {
         </Link>
       
 
-        <div className="p-4 flex flex-grow mx-auto mb-10">
+        <div className="p-4 flex flex-grow mx-auto mb-13">
           <div 
             className="select-none flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
             onClick={() => {
@@ -109,8 +109,8 @@ const Game: NextPage = () => {
         </div>
 
         <footer className="text-center lg:text-left">
-        <div className="text-center text-gray-700 p-4 text-opacity-60">
-          © {getYear()} <a className="font-semibold text-opacity-60" href="https://aru.wtf/">Aravind Natchiappan</a>
+        <div className="select-none text-center text-gray-700 p-4 text-opacity-60">
+          © {getYear()} <a className="select-none font-semibold text-opacity-60" href="https://aru.wtf/">Aravind Natchiappan</a>
         </div>
       </footer>
       </div>
