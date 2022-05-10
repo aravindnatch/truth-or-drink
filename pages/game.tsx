@@ -91,7 +91,7 @@ const Game: NextPage = () => {
         </Link>
       
 
-        <div className="p-4 flex flex-grow mx-auto mb-13">
+        <div className="p-4 flex flex-grow mx-auto mb-10">
           <div 
             className="select-none flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
             onClick={() => {
