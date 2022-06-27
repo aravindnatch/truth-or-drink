@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <script defer src="https://omni.aru.wtf/script.js"></script>
       </Head>
 
-      <div className="container flex mx-auto p-4 h-screen">
+      <div className="container flex mx-auto p-4 h-screen fixmobilevh">
         <div className="m-auto">
           <div className="select-none text-4xl text-header font-semibold mx-auto text-center align-middle pb-2">
             TRUTH <span className="text-xl align-middle">O R</span> DRINK
