@@ -77,9 +77,9 @@ const Game: NextPage = () => {
         <script defer data-domain="tod.aru.wtf" src="https://analytics.aru.wtf/js/script.js"></script>
         <script defer src="https://omni.aru.wtf/script.js"></script>
       </Head>
-      <div className="flex flex-col h-screen">
+      <div className="h-screen fixmobilevh flex flex-col">
         
-        <Link href='/'>
+        <Link href='/'> 
           <div className="cursor-pointer">
             <div className="select-none text-4xl text-header font-semibold mx-auto text-center align-middle pt-4 pb-2">
               TRUTH <span className="text-xl align-middle">O R</span> DRINK
@@ -92,9 +92,9 @@ const Game: NextPage = () => {
         </Link>
       
 
-        <div className="p-4 flex flex-grow mx-auto mb-10">
+        <div className="flex flex-grow p-2 mx-auto mt-2">
           <div 
-            className="select-none flex items-center justify-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
+            className="select-none flex items-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
             onClick={() => {
               if (index + 1 >= questions.length) {
                 setQuestion(questions[0]);
@@ -109,11 +109,11 @@ const Game: NextPage = () => {
           </div>
         </div>
 
-        <footer className="text-center lg:text-left">
-        <div className="select-none text-center text-gray-700 p-4 text-opacity-60">
-          © {getYear()} <a className="select-none font-semibold text-opacity-60" href="https://aru.wtf/">Aravind Natchiappan</a>
-        </div>
-      </footer>
+        <footer className="flex flex-col text-center lg:text-left">
+          <div className="select-none text-center text-gray-700 p-2 mb-2 text-opacity-60">
+            © {getYear()} <a className="select-none font-semibold text-opacity-60" href="https://aru.wtf/">Aravind Natchiappan</a>
+          </div>
+        </footer>
       </div>
     </div>
   )
