@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { NextPage } from 'next'
 import { useRouter } from "next/router";
 import Head from 'next/head'
+import Script from 'next/script'
 import Link from 'next/link';
 
 import normal from '../bank/normal.json';
@@ -69,13 +70,29 @@ const Game: NextPage = () => {
     return new Date().getFullYear();
   }
 
+  function nextQuestion() {
+    if (index + 1 >= questions.length) {
+      setQuestion(questions[0]);
+      setIndex(0)
+    } else {
+      setQuestion(questions[index+1]); 
+      setIndex(index + 1)
+    }
+  }
+
+  function detectEvent(event: any) {
+    if (event.code === "Space") {
+      nextQuestion()
+    }
+  }
+
   return (
-    <div>
+    <div tabIndex={0} onKeyDown={(event) => detectEvent(event)}>
+      <Script data-domain="tod.aru.wtf" src="https://analytics.aru.wtf/js/script.js" />
+      <Script src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
-        <script defer data-domain="tod.aru.wtf" src="https://analytics.aru.wtf/js/script.js"></script>
-        <script defer src="https://omni.aru.wtf/script.js"></script>
       </Head>
       <div className="h-screen fixmobilevh flex flex-col">
         
@@ -95,15 +112,7 @@ const Game: NextPage = () => {
         <div className="flex flex-grow p-2 mx-auto mt-2">
           <div 
             className="select-none flex items-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
-            onClick={() => {
-              if (index + 1 >= questions.length) {
-                setQuestion(questions[0]);
-                setIndex(0)
-              } else {
-                setQuestion(questions[index+1]); 
-                setIndex(index + 1)
-              }
-            }}           
+            onClick={() => {nextQuestion()}}           
           >
             {question}
           </div>
