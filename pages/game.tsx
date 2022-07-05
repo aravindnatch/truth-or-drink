@@ -86,9 +86,16 @@ const Game: NextPage = () => {
     }
   }
 
+  if (typeof window !== "undefined") {
+    window.addEventListener('keydown', (event) => {
+      if (event.code === "Space") {
+        nextQuestion()
+      }
+    })
+  }
+
   return (
-    <div tabIndex={0} onKeyDown={(event) => detectEvent(event)}>
-      <Script data-domain="tod.aru.wtf" src="https://analytics.aru.wtf/js/script.js" />
+    <div >
       <Script src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
