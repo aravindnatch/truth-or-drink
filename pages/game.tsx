@@ -95,7 +95,7 @@ const Game: NextPage = () => {
             </div>
           
             <div className={[gradient, "select-none rounded-lg text-center text-white font-bold max-w-fit px-4 m-auto"].join(" ")}>
-                {mode.toUpperCase().split('').join(' ')}
+              {mode.toUpperCase().split('').join(' ')}
             </div>
           </div>
         </Link>
@@ -105,7 +105,7 @@ const Game: NextPage = () => {
             className="select-none flex items-center text-5xl text-white font-semibold bg-black rounded-xl shadow-xl p-4 max-w-3xl w-full justify-center text-center"
             onClick={nextQuestion}
           >
-              {question}
+            {question}
           </div>
         </div>
 
