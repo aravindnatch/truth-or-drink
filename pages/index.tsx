@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="h-full">
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
         <script defer src="https://omni.aru.wtf/script.js"></script>
       </Head>
 
-      <div className="container flex mx-auto p-4 h-screen fixmobilevh">
+      <div className="container flex mx-auto p-4 fixmobilevh">
         <div className="m-auto">
           <div className="select-none text-4xl text-header font-semibold mx-auto text-center align-middle pb-2">
             TRUTH <span className="text-xl align-middle">O R</span> DRINK

@@ -52,7 +52,7 @@ const Game: NextPage = () => {
   }
 
   useEffect(() => {
-    let currentIndex = prearr.length,  randomIndex;
+    let currentIndex = prearr.length, randomIndex;
 
     while (currentIndex != 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
@@ -80,29 +80,14 @@ const Game: NextPage = () => {
     }
   }
 
-  function detectEvent(event: any) {
-    if (event.code === "Space") {
-      nextQuestion()
-    }
-  }
-
-  if (typeof window !== "undefined") {
-    window.addEventListener('keydown', (event) => {
-      if (event.code === "Space") {
-        nextQuestion()
-      }
-    })
-  }
-
   return (
-    <div >
+    <div className="h-full">
       <Script src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-screen fixmobilevh flex flex-col">
-        
+      <div className="fixmobilevh flex flex-col">
         <Link href='/'> 
           <div className="cursor-pointer">
             <div className="select-none text-4xl text-header font-semibold mx-auto text-center align-middle pt-4 pb-2">
@@ -115,13 +100,12 @@ const Game: NextPage = () => {
           </div>
         </Link>
       
-
-        <div className="flex flex-grow p-2 mx-auto mt-2">
+        <div className="flex flex-grow p-2 mx-auto mt-2 justify-center w-screen">
           <div 
-            className="select-none flex items-center text-5xl text-white text-header font-semibold text-center bg-black rounded-xl shadow-xl p-4 max-w-xl"
-            onClick={() => {nextQuestion()}}           
+            className="select-none flex items-center text-5xl text-white font-semibold bg-black rounded-xl shadow-xl p-4 max-w-3xl w-full justify-center text-center"
+            onClick={nextQuestion}
           >
-            {question}
+              {question}
           </div>
         </div>
 
