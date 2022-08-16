@@ -82,7 +82,7 @@ const Game: NextPage = () => {
 
   return (
     <div className="h-full">
-      <Script src="https://omni.aru.wtf/script.js" />
+      <Script async src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
