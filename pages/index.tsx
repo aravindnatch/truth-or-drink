@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
-        <script async src="https://omni.aru.wtf/script.js"></script>
+        <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
       </Head>
 
       <div className="container flex mx-auto p-4 fixmobilevh">

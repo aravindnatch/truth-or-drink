@@ -64,6 +64,8 @@ const Game: NextPage = () => {
 
     setQuestions(prearr);
     setQuestion(prearr[0]);
+
+    document.getElementById('maindiv')!.focus();
   }, []);
 
   function getYear() {
@@ -80,9 +82,15 @@ const Game: NextPage = () => {
     }
   }
 
+  function handleKeyDown(e: any) {
+    if (e.code === 'Space') {
+      nextQuestion();
+    }
+  }
+
   return (
-    <div className="h-full">
-      <Script async src="https://omni.aru.wtf/script.js" />
+    <div className="h-full" tabIndex={0} id='maindiv' onKeyDown={handleKeyDown}>
+      <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
