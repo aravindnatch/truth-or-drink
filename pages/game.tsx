@@ -83,7 +83,7 @@ const Game: NextPage = () => {
   }
 
   function handleKeyDown(e: any) {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' || e.code == 'ArrowRight') {
       nextQuestion();
     }
   }
