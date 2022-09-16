@@ -119,7 +119,7 @@ const Game: NextPage = () => {
 
         <footer className="flex flex-col text-center lg:text-left">
           <div className="select-none text-center text-gray-700 p-2 mb-2 text-opacity-60">
-            © {getYear()} <a className="select-none font-semibold text-opacity-60" href="https://aru.wtf/">Aravind Natchiappan</a>
+            © {getYear()} <a className="select-none font-semibold text-opacity-60" href="https://aravindnatch.me/">Aravind Natchiappan</a>
           </div>
         </footer>
       </div>
