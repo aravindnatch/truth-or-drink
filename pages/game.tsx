@@ -83,7 +83,6 @@ const Game: NextPage = () => {
     setIndex(newstart);
     setQuestions(prearr);
     setQuestion(prearr[newstart]);
-    console.log(prearr)
     document.getElementById('maindiv')!.focus();
   }, [router.isReady]);
   
