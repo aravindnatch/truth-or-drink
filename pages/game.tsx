@@ -20,10 +20,6 @@ const Game: NextPage = () => {
   var prearr: any = [];
   var gradient = ''
 
-  useEffect(() => {
-    if(!router.isReady) return;
-  }, [router.isReady])
-
   if (router.query.mode) {
     mode = String(router.query.mode);
   }
@@ -52,7 +48,17 @@ const Game: NextPage = () => {
   }
 
   useEffect(() => {
+    if(!router.isReady) return;
+
+    const ind = parseInt(String(router.query.ind))
+    const offset = parseInt(String(router.query.offset))
+
     let currentIndex = prearr.length, randomIndex;
+    var temp = "";
+    
+    if (ind < prearr.length) {
+      temp = prearr[ind];
+    }
 
     while (currentIndex != 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
@@ -62,11 +68,25 @@ const Game: NextPage = () => {
         prearr[randomIndex], prearr[currentIndex]];
     }
 
-    setQuestions(prearr);
-    setQuestion(prearr[0]);
+    var newstart = 0;
+    if (temp != "") {
+      newstart = prearr.indexOf(temp);
+    }
 
+    if (!isNaN(offset)) {
+      newstart = newstart - offset;
+      if (newstart < 0) {
+        newstart = prearr.length + newstart;
+      }
+    }
+  
+    setIndex(newstart);
+    setQuestions(prearr);
+    setQuestion(prearr[newstart]);
+    console.log(prearr)
     document.getElementById('maindiv')!.focus();
-  }, []);
+  }, [router.isReady]);
+  
 
   function getYear() {
     return new Date().getFullYear();
@@ -82,9 +102,21 @@ const Game: NextPage = () => {
     }
   }
 
+  function prevQuestion() {
+    if (index - 1 < 0) {
+      setQuestion(questions[questions.length - 1]);
+      setIndex(questions.length - 1)
+    } else {
+      setQuestion(questions[index-1]);
+      setIndex(index - 1)
+    }
+  }
+
   function handleKeyDown(e: any) {
     if (e.code === 'Space' || e.code == 'ArrowRight') {
       nextQuestion();
+    } else if (e.code == 'ArrowLeft') {
+      prevQuestion();
     }
   }
 
