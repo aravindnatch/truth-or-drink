@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Head from 'next/head'
 import Script from 'next/script'
 import Link from 'next/link';
+import { useSwipeable } from 'react-swipeable';
 
 import normal from '../bank/normal.json';
 import party from '../bank/party.json';
@@ -15,6 +16,7 @@ const Game: NextPage = () => {
   const [index, setIndex] = useState(0)
   const [questions, setQuestions] = useState([""])
   const [question, setQuestion] = useState("")
+  const [stopScroll, setStopScroll] = useState(false);
 
   var mode = 'normal';
   var prearr: any = [];
@@ -119,6 +121,13 @@ const Game: NextPage = () => {
     }
   }
 
+  const handlers = useSwipeable({
+    onSwipedLeft: (eventData) => nextQuestion(),
+    onSwipedRight: (eventData) => prevQuestion(),
+    onSwipeStart: () => setStopScroll(true),
+    onSwiped: () => setStopScroll(false)
+  });
+
   return (
     <div className="h-full" tabIndex={0} id='maindiv' onKeyDown={handleKeyDown}>
       <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
@@ -139,7 +148,7 @@ const Game: NextPage = () => {
           </div>
         </Link>
       
-        <div className="flex flex-grow p-2 mx-auto mt-2 justify-center w-screen">
+        <div className="flex flex-grow p-2 mx-auto mt-2 justify-center w-screen" {...handlers} style={{ touchAction: stopScroll ? 'none' : 'auto' }}>
           <div 
             className="select-none flex items-center text-5xl text-white font-semibold bg-black rounded-xl shadow-xl p-4 max-w-3xl w-full justify-center text-center"
             onClick={nextQuestion}
