@@ -29,15 +29,21 @@ const Game: NextPage = () => {
   switch (mode) {
     case "party":
       gradient = 'bg-gradient-to-r from-[#FFC300] to-[#FF8900]';
-      prearr = party;
+      party.map((q: String) => {
+        prearr.push(q);
+      })
       break;
     case "dirty":
       gradient = 'bg-gradient-to-r from-[#FF006D] to-[#FC0023]';
-      prearr = dirty;
+      dirty.map((q: String) => {
+        prearr.push(q);
+      })
       break;
     case "dares": 
       gradient = 'bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]';
-      prearr = dares;
+      dares.map((q: any) => {
+        prearr.push(q);
+      })
       break;
     case "mix":
       gradient = 'bg-black';
@@ -46,13 +52,15 @@ const Game: NextPage = () => {
 
     default: 
       gradient = 'bg-gradient-to-r from-[#00C5FF] to-[#009BFF]';
-      prearr = normal;
+      normal.map((q: any) => {
+        prearr.push(q);
+      })
   }
 
   useEffect(() => {
     if(!router.isReady) return;
 
-    const ind = parseInt(String(router.query.ind))
+    const ind = parseInt(String(router.query.q))
     const offset = parseInt(String(router.query.offset))
 
     let currentIndex = prearr.length, randomIndex;
@@ -122,8 +130,8 @@ const Game: NextPage = () => {
   }
 
   const handlers = useSwipeable({
-    onSwipedLeft: (eventData) => nextQuestion(),
-    onSwipedRight: (eventData) => prevQuestion(),
+    onSwipedLeft: () => nextQuestion(),
+    onSwipedRight: () => prevQuestion(),
     onSwipeStart: () => setStopScroll(true),
     onSwiped: () => setStopScroll(false)
   });

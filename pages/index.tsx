@@ -18,9 +18,11 @@ const Home: NextPage = () => {
             TRUTH <span className="text-xl align-middle">O R</span> DRINK
           </div>
 
-          <div className="select-none rounded-lg bg-[#8D889F] text-center text-white font-bold max-w-fit px-4 m-auto">
-            O N L I N E
-          </div>
+          <Link href='/manipulate'>
+            <div className="select-none rounded-lg bg-[#8D889F] text-center text-white font-bold max-w-fit px-4 m-auto">
+              O N L I N E
+            </div>
+          </Link>
 
           <br/>
 
