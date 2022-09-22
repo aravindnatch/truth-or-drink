@@ -137,7 +137,7 @@ const Game: NextPage = () => {
   });
 
   return (
-    <div className="h-full" tabIndex={0} id='maindiv' onKeyDown={handleKeyDown}>
+    <div className="h-full" tabIndex={0} id='maindiv' onKeyDown={handleKeyDown} style={{ touchAction: 'none' }}>
       <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
@@ -156,7 +156,7 @@ const Game: NextPage = () => {
           </div>
         </Link>
       
-        <div className="flex flex-grow p-2 mx-auto mt-2 justify-center w-screen" {...handlers} style={{ touchAction: stopScroll ? 'none' : 'auto' }}>
+        <div className="flex flex-grow p-2 mx-auto mt-2 justify-center w-screen" {...handlers}>
           <div 
             className="select-none flex items-center text-5xl text-white font-semibold bg-black rounded-xl shadow-xl p-4 max-w-3xl w-full justify-center text-center"
             onClick={nextQuestion}
