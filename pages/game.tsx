@@ -138,10 +138,10 @@ const Game: NextPage = () => {
 
   return (
     <div className="h-full" tabIndex={0} id='maindiv' onKeyDown={handleKeyDown}>
-      <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
+        <script defer src="https://omni.aru.wtf/script.js" />
       </Head>
       <div className="fixmobilevh flex flex-col">
         <Link href='/'> 

@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
-        <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
+        <script defer src="https://omni.aru.wtf/script.js" />
       </Head>
 
       <div className="container flex mx-auto p-4 fixmobilevh">
