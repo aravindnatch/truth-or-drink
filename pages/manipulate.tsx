@@ -50,10 +50,10 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="h-full">
+        <Script src="https://omni.aru.wtf/script.js"></Script>
         <Head>
           <title>Truth or Drink</title>
           <link rel="icon" href="/favicon.ico" />
-          <Script strategy="afterInteractive" src="https://omni.aru.wtf/script.js" />
         </Head>
         <div className="container flex mx-auto p-4 fixmobilevh">
           <div className="m-auto">
