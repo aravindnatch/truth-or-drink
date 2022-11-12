@@ -15,7 +15,7 @@ Users can alter the question bank by forcing a specific question to appear at a 
 git clone https://github.com/aravindnatch/truth-or-drink.git
 
 # install the dependencies
-npm install
+cd truth-or-drink && npm install
 
 # start the development server
 npm run dev
