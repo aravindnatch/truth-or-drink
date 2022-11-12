@@ -23,7 +23,14 @@ const Home: NextPage = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const url = `/game?mode=${e.target[0].value}&q=${e.target[1].value}&offset=${e.target[2].value}`;
+    const mode = e.target[0].value;
+    const question = e.target[1].value;
+    const offset = e.target[2].value;
+    const knownModes = ['normal', 'party', 'dirty', 'dares'];
+    
+    if (isNaN(question) || isNaN(offset) || !knownModes.includes(mode)) { return }
+
+    const url = `/game?mode=${mode}&q=${question}&offset=${offset}`;
     window.location.href = url;
   }
 
