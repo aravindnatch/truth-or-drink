@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     const mode = e.target[0].value;
     const question = e.target[1].value;
     const offset = e.target[2].value;
-    const knownModes = ['normal', 'party', 'dirty', 'dares'];
+    const knownModes = ['normal', 'party', 'dirty', 'dares', 'mix'];
     
     if (isNaN(question) || isNaN(offset) || !knownModes.includes(mode)) { return }
 
