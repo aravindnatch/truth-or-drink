@@ -6,7 +6,18 @@ import Script from 'next/script'
 const Home: NextPage = () => {
   return (
     <div className="h-full">
-      <Script src="https://omni.aru.wtf/script.js"></Script>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W9M7TVKHRZ"/>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-W9M7TVKHRZ');
+          `,
+        }}
+      />
       <Head>
         <title>Truth or Drink</title>
         <link rel="icon" href="/favicon.ico" />
