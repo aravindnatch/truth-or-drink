@@ -1,3 +1,4 @@
+
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -5,7 +6,7 @@ import Script from 'next/script'
 
 const Home: NextPage = () => {
   return (
-    <div className="h-full">
+    <div className="h-screen">
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W9M7TVKHRZ"/>
       <Script
         dangerouslySetInnerHTML={{
